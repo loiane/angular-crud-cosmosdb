@@ -1,4 +1,3 @@
-const serverPort = process.env.SERVER_PORT || 3001;
 const cosmos = {
   accountName: process.env.COSMOSDB_ACCOUNT,
   databaseName: process.env.COSMOSDB_DB,
@@ -7,6 +6,5 @@ const cosmos = {
 };
 
 module.exports = {
-  serverPort,
   cosmos
 };

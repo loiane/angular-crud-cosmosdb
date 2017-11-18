@@ -13,7 +13,7 @@ console.log(`serving ${publicweb}`);
 app.use('/api', routes);
 
 app.get('*', (req, res) => {
-  // res.sendFile(`index.html`, { root: publicweb });
+  res.sendFile(`index.html`, { root: publicweb });
 });
 
 const port = process.env.PORT || '3000';
