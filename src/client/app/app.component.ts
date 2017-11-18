@@ -2,23 +2,16 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `
-  <div class="btn-group" dropdown>
-  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-    Button dropdown <span class="caret"></span>
-  </button>
-  <ul *dropdownMenu class="dropdown-menu" role="menu">
-    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
-    <li class="divider dropdown-divider"></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
-    </li>
-  </ul>
-</div>
+  template: `      
+  <nav class="navbar navbar-toggleable-md navbar-dark fixed-top bg-primary">
+    <a style="min-width: 280px" class="navbar-brand" routerLink="/">
+        Angular contacts on the cloud!
+    </a>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
   `,
-  styles: []
+  styles: [`.container { padding-top: 60px; }`]
 })
-export class AppComponent {
-  title = 'app';
-}
+export class AppComponent { }

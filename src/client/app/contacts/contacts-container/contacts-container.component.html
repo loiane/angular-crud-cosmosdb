@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-header">
+        <div class="float-left">
+            <h4>Contact list</h4>
+        </div>
+        <div class="float-right">
+            <button type="button" class="btn btn-primary" [routerLink]="['new']">Create</button>
+        </div>
+    </div>
+    <div class="card-body">
+        <app-contact-list 
+            [contacts]="contacts$ | async" 
+            (onShow)="onShow($event)" 
+            (onEdit)="onEdit($event)" 
+            (onDelete)="onDelete($event)">
+        </app-contact-list>
+    </div>
+</div>
+
+<ng-template #deleteModal>
+    <div class="modal-body text-center">
+        <p>Do you want to delete this contact?</p>
+        <button type="button" class="btn btn-danger" (click)="onConfirmDelete()">Yes</button>
+        <button type="button" class="btn btn-primary" (click)="onDeclineDelete()">No</button>
+    </div>
+</ng-template>

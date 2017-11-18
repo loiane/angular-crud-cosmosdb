@@ -1,3 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'variables'; 
+@import 'variables';
 @import '../../node_modules/bootstrap/scss/bootstrap';
+
+button {
+  cursor: pointer;
+}
+
+$linkHoverColor: #025aa5;
+
+a.text-primary {
+  cursor: pointer;
+
+  &:focus {
+    color: $linkHoverColor;
+    text-decoration: underline;
+  }
+
+  &:hover {
+    color: $linkHoverColor;
+    text-decoration: underline;
+  }
+}
+
+.form-group.required label:after {
+  content: ' *';
+  color: red;
+}
+
+.form-group .is-invalid {
+  border-color: #dc3545 !important;
+}

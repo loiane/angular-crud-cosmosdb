@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Create new contact</h4>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="form">
+
+      <div class="form-group required">
+        <label for="name">Name:</label>
+        <input id="name" type="text" class="form-control" formControlName="name" [ngClass]="displayFormGroupCss('name')">
+        <div class="invalid-feedback" [hidden]="!isFieldValid('name')">Please inform  a name.</div>
+      </div>
+
+      <div class="form-group required">
+        <label for="email">Email:</label>
+        <input id="email" type="email" class="form-control" formControlName="email" [ngClass]="displayFormGroupCss('email')">
+        <div class="invalid-feedback" [hidden]="!isFieldValid('email')">Please inform  an email address.</div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input id="phone" type="tel" class="form-control" formControlName="phone">
+      </div>
+
+    </form>
+  </div>
+  <div class="card-footer">
+    <button type="button" class="btn btn-success" (click)="onSubmit()">Submit</button>
+    <button type="button" class="btn btn-outline-secondary" (click)="onCancel()">Cancel</button>
+  </div>
+</div>

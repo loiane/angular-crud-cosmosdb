@@ -1,0 +1,16 @@
+<div class="card" *ngIf="contact">
+  <div class="card-header">Contact Details</div>
+
+  <div class="card-body">
+    <p><span class="label">Name: </span><span>{{ contact.name }}</span></p>
+    <p><span class="label">Email: </span><span>{{ contact.email }}</span></p>
+    <p><span class="label">Phone: </span><span>{{ contact.phone }}</span></p>
+  </div>
+
+  <div class="card-footer text-muted">
+    <span class="float-md-right ">
+      <button (click)="onEdit.emit(contact)" class="btn btn-sm btn-outline-warning"> EDIT</button>
+      <button (click)="onDelete.emit(contact)" class="btn btn-sm btn-outline-danger"> DELETE</button>
+    </span>
+  </div>
+</div>

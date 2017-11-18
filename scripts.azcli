@@ -1,0 +1,15 @@
+# build the image and run the docker container for prod
+docker-compose -f docker-compose.debug.yml up -d --build
+# Use the docker compose command form the CMD palette
+
+# open the browser to see the running app
+open http://localhost:3001
+
+# tag and push it from the extension
+# tag it
+docker tag angular-crud-cosmosdb angularcosmosdb.azurecr.io/angularcosmosdb:latest
+# log into the container registry
+docker login angularcosmosdb.azurecr.io
+# push it to the container registry
+docker push angularcosmosdb.azurecr.io/angularcosmosdb
+# docker login angularcosmosdb.azurecr.io -u angularcosmosdb -p
